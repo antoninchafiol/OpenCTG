@@ -16,19 +16,16 @@ int pgcd(int a, int b){
     return (b==0) ? a : pgcd(b, a%b);
 }
 
-int* bezout_coef(int a, int b){
-    int* res;
+vector<int> bezout_coef(int a, int b, int u, int v){
+    vector<int> res (2);
+    u = 1;
+    v = 0;
+    
     return res;
 }
 
 bool isPrime(int a){
     return true;
-}
-
-int* decompose(int n){
-
-    int* res;
-    return res;
 }
 
 vector<int> generate_prime(int max){
