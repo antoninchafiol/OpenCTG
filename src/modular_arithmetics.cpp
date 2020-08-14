@@ -13,3 +13,11 @@ unsigned int powm(unsigned int number, unsigned int exponential, unsigned int mo
     }
     return res;
 }
+
+bool isCongruent(int x, int y, int modulo){
+    return (x%modulo == y%modulo) ? 0 : 1;
+}
+
+unsigned int modular_inverse(unsigned int a, unsigned int modulo){
+    // pgcd avec modulo
+}

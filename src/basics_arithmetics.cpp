@@ -7,9 +7,9 @@
 using namespace std;
 //First occurence of functions (created at the start of the project)
 
-int pgcd(int a, int b){
+unsigned int pgcd(unsigned int a, unsigned int b){
     if(a<b){
-        int c = a;
+        unsigned int c = a;
         a = b;
         b = c;
     }
@@ -17,11 +17,17 @@ int pgcd(int a, int b){
 }
 
 
-vector<int> bezout_coef(int a, int b, int u, int v){
-    vector<int> res (2);
-    u = 1;
-    v = 0;
-    
+vector<unsigned int> bezout_coef(unsigned int a, unsigned int b){
+    vector<unsigned int> res (2);
+    unsigned int r = a,  rp = b, u = 1, v = 0, up = 0, vp = 1;
+    while (rp != 0)
+    {
+        unsigned int q = (unsigned int)r/rp;
+        unsigned int rs = r, us = u, vs = v, r = rp, u = up, v = vp;
+        unsigned int rp = rs - q*rp, up = us - q*up, vp = vs - q*vp;
+    }
+    res[0] = u;
+    res[1] = v;
     return res;
 }
 
