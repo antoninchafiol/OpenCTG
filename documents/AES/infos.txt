@@ -1,0 +1,3 @@
+Les étapes intermédiaires de chiffrement seront testées pas à pas en suivant [FIPS197].
+
+Test final : déchiffer le fichier ci-dessous avec la clef 0x000102030405060708090A0B0C0D0E0F.

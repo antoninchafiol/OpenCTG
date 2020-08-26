@@ -19,5 +19,8 @@ bool isCongruent(int x, int y, int modulo){
 }
 
 unsigned int modular_inverse(unsigned int a, unsigned int modulo){
-    // pgcd avec modulo
+    a = a%modulo; 
+    for (int x=1; x<modulo; x++) 
+       if ((a*x) % modulo == 1) 
+          return x; 
 }

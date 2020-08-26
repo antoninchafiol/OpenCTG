@@ -1,0 +1,5 @@
+Un seul fichier de test :
+
+une suite d'octets représentant l'encodage RSA d'un texte.
+
+La clé privée est : p=57527 et q=52067,  l'exposant de chiffrement est e=5.

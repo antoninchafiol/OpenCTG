@@ -1,0 +1,4 @@
+Le fichier ci-dessous a une signature valide, avec pour clé publique associée
+
+module : 3007206427
+exposant public : 7
