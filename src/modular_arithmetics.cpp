@@ -24,3 +24,7 @@ unsigned int modular_inverse(unsigned int a, unsigned int modulo){
        if ((a*x) % modulo == 1) 
           return x; 
 }
+
+unsigned int chinese_remainder(vector<vector<int>> input){
+    int res = 0;
+}
