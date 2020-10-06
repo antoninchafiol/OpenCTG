@@ -1,0 +1,6 @@
+Le fichier ci-dessous est un message valide signé au moyen d'une signature numérique Elgamal.
+La clé publique du signataire est 
+
+    p=3 000 000 077
+    A=966720539
+    g=2

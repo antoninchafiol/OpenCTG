@@ -1,0 +1,5 @@
+
+    encodage CRC sans bruit d'un texte
+    encodage du même texte avec bruit à 1%
+
+Le polynôme de contrôle est X^8+X^5+X^4+1, comme l'indique le suffixe.

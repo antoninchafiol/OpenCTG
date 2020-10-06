@@ -1,0 +1,1 @@
+Déchiffrer le fichier ci-dessous, sachant que le module de chiffrement est n=p*q, où p=32771 et q=92899.

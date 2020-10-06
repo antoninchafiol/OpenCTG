@@ -1,0 +1,1 @@
+unsigned int powm(unsigned int number, unsigned int exponential, unsigned int modulo);

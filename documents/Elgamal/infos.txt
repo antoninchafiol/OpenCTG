@@ -1,0 +1,7 @@
+D'abord un test simple :
+
+Décoder 000005be00000624 (en hexa, of course) sachant que la clé privée est p=2579, a=765.
+
+Il faut trouver 1299.
+
+Décoder le fichier suivant avec le module p=2725838081, l'élément primitif est alpha=6, l'exposant secret est a=16807.

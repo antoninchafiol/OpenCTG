@@ -1,0 +1,31 @@
+Pour tester progressivement le DES :
+
+    Principe de chiffrement (sans permutations initiale et finale), avec f(i)=37453123*i :
+    bloc initial : 0123456789abcdef
+    bloc chiffré : b94bd5cf02dcad77
+    Idem avec les permutations initiale et finale
+    bloc chiffré : a2b3aab7202ef6e7
+    Idem avec la vraie fonction f mais une clé constante égale à 123456789abcdef (en hexadécimal, évidemment)
+    bloc chiffré : 6dd58e830a84036
+    Diversification de la clé 0123456789abcdef
+    clé numéro 1 : b02679b49a5
+    clé numéro 2 : 69a659256a26
+    clé numéro 3 : 45d48ab428d2
+    clé numéro 4 : 7289d2a58257
+    clé numéro 5 : 3ce80317a6c2
+    clé numéro 6 : 23251e3c8545
+    clé numéro 7 : 6c04950ae4c6
+    clé numéro 8 : 5788386ce581
+    clé numéro 9 : c0c9e926b839
+    clé numéro 10 : 91e307631d72
+    clé numéro 11 : 211f830d893a
+    clé numéro 12 : 7130e5455c54
+    clé numéro 13 : 91c4d04980fc
+    clé numéro 14 : 5443b681dc8d
+    clé numéro 15 : b691050a16b5
+    clé numéro 16 : ca3d03b87032
+    Chiffrement avec la clé diversifiée
+    bloc chiffré : 56cc09e7cfdc4cef
+    Déchiffrement du texte codé ci-dessous (fichier en lien en fin de section)
+
+Ci-dessous un fichier contenant les tableaux constants (permutations, S-boxes, etc) nécessaires au DES.
