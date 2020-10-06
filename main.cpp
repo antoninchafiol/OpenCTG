@@ -8,7 +8,8 @@ int main(int argc, char const *argv[])
         cout << "Usage: ./crypt <parameters>" << endl;
     }
     else{
-        int a = pgcd(794, 1356);
+        
+        vector<int> coef = bCoef(a, )
         cout << a << endl;
 
     }

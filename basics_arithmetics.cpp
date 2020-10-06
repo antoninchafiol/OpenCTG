@@ -20,8 +20,28 @@ vector<int> bezout_coef(int a, int b, int u, int v){
     vector<int> res (2);
     u = 1;
     v = 0;
-    
+
     return res;
+}
+
+vector<int> bCoef(int a,  int b){
+    vector<int> res (3);
+    int r = a, rp = b, u=1, v=0, up= 0, vp = 1;
+    while (rp!=0)
+    {
+        int q = r/rp;
+        int rs = r, us = u, vs = v;
+        r = rp;
+        u = up;
+        v = vp;
+        rp = rs - q*r;
+        up = us - q*up;
+        vp = vs - q*vp;
+    }
+    res[0] = r;
+    res[1] = u;
+    res[2] = v;
+    return res; 
 }
 
 bool isPrime(int a){
