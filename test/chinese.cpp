@@ -1,5 +1,5 @@
 #include <iostream>
-#include"../include/modular_arithmetics.hpp"
+#include"../include/arithmetics.hpp"
 
 
 int main(int argc, char const *argv[])
