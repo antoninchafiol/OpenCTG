@@ -2,7 +2,8 @@ CC=g++
 CFLAGS=-Wall
 EX_NAME=opencpt
 
-FILE=/home/antonin/Share/crypto
+FILE=/home/antonin/Documents/Personnel/Projets/crypto
+#FILE=/home/antonin/Share/crypto
 BIN=$(FILE)/bin
 BUILD=$(FILE)/build
 INCLUDE=$(FILE)/include
@@ -12,8 +13,10 @@ TEST=$(FILE)/test
 MAIN_PATTERN=($(CC) $(CFLAGS) $^ -o $(BIN)/$@)
 TEST_PATTERN_bARITH=($(TEST)/$@ $(BUILD)/basics_arithmetics.o)
 TEST_PATTERN_mARITH=($(TEST)/$@ $(BUILD)/modular_arithmetics.o)
+BASE_COMPIL=basics_arithmetics modular_arithmetics
+OTHER_COMPIL=chinese bezoutc
 
-all: basics_arithmetics modular_arithmetics $(EX_NAME) powm
+all: $(BASE_COMPIL) $(EX_NAME) $(OTHER_COMPIL)
 
 basics_arithmetics: $(SRC)/basics_arithmetics.cpp  $(INCLUDE)/basics_arithmetics.hpp
 	$(CC) $(CFLAGS) $^ -c
@@ -31,6 +34,12 @@ pgcd: $(TEST_PATTERN_bARITH)
 
 powm: $(TEST)/powm.cpp $(BUILD)/modular_arithmetics.o
 	$(MAIN_PATTERN)
- 
+
+chinese: $(TEST)/chinese.cpp $(BUILD)/modular_arithmetics.o $(BUILD)/basics_arithmetics.o
+	$(MAIN_PATTERN)
+
+bezoutc:$(TEST)/bezoutc.cpp $(BUILD)/modular_arithmetics.o $(BUILD)/basics_arithmetics.o
+	$(MAIN_PATTERN)
+
 clean:
 	rm $(BUILD)/*

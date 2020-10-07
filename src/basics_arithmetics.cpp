@@ -4,7 +4,6 @@
 #include <numeric>
 #include "../include/basics_arithmetics.hpp"
 
-using namespace std;
 //First occurence of functions (created at the start of the project)
 
 unsigned int pgcd(unsigned int a, unsigned int b){
@@ -17,14 +16,18 @@ unsigned int pgcd(unsigned int a, unsigned int b){
 }
 
 
-vector<unsigned int> bezout_coef(unsigned int a, unsigned int b){
-    vector<unsigned int> res (2);
-    unsigned int r = a,  rp = b, u = 1, v = 0, up = 0, vp = 1;
+vector<int> bCoeff(unsigned int a, unsigned int b){
+    vector<int> res (2);
+    unsigned int r = a, u = 1, v = 0, rp = b, up = 0, vp = 1, q, rs, us, vs;
+
     while (rp != 0)
     {
-        unsigned int q = (unsigned int)r/rp;
-        unsigned int rs = r, us = u, vs = v, r = rp, u = up, v = vp;
-        unsigned int rp = rs - q*rp, up = us - q*up, vp = vs - q*vp;
+        q = r/rp;
+        rs = r; us = u; vs = v;
+        r = rp; u = up; v = vp;
+        rp = rs - q * rp;
+        up = us - q * up;
+        vp = vs - q * vp;
     }
     res[0] = u;
     res[1] = v;
