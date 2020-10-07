@@ -1,6 +1,5 @@
 #include <iostream>
-#include "../include/modular_arithmetics.hpp"
-#include "../include/basics_arithmetics.hpp"
+#include "../include/arithmetics.hpp"
 
 
 int main(int argc, char const *argv[])
@@ -21,7 +20,6 @@ int main(int argc, char const *argv[])
     std::cout << x << std::endl;
     std::cout << y << std::endl;
 
-    printf("DEBUG\n");
     vector<int> bCoeff_coef = bCoeff(x,y);
     printf("u : %d | v: %d \n", bCoeff_coef[0], bCoeff_coef[1]);
     return 0;

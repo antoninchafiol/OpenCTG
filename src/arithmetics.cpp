@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
-#include "../include/basics_arithmetics.hpp"
+#include "../include/arithmetics.hpp"
 
 //First occurence of functions (created at the start of the project)
 
@@ -137,7 +137,6 @@ unsigned int chinese_remainder(vector<unsigned int> ak, vector<unsigned int> nk)
     for (unsigned int i = 0; i < k_size; i++)
     {
         N_k.push_back(N/nk[i]);
-        printf("%d\n", N_k[i]);
     }
     // Creation of the uk
     vector<unsigned int> uk;
@@ -151,9 +150,7 @@ unsigned int chinese_remainder(vector<unsigned int> ak, vector<unsigned int> nk)
     for (unsigned int i = 0; i < k_size; i++)
     {
         res += uk[i]*N_k[i]*ak[i];
-        printf("uk :%d Nk: %d ak: %d nk: %d res : %d\n",uk[i],N_k[i],ak[i],nk[i] ,uk[i]*N_k[i]*ak[i]);
     }
-    printf("res1 = %d\n", res);
     res =  (int)remainder((double)res, (double)N);
     cout << "Unique solution: x = " << res << " mod " << N << endl;
     return res;  

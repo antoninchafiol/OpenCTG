@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/basics_arithmetics.hpp"
+#include "../include/arithmetics.hpp"
 
 using namespace std;
 int main(int argc, char const *argv[])
