@@ -8,6 +8,7 @@
 
 //First occurence of functions (created at the start of the project)
 
+
 vector<int> bCoeff(unsigned int a, unsigned int b){
     vector<int> res (2);
     unsigned int r = a, u = 1, v = 0, rp = b, up = 0, vp = 1, q, rs, us, vs;

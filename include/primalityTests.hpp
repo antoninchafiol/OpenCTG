@@ -1,6 +1,6 @@
 #include <vector>
 #include <cmath>
 
-void ptFermat(int p);
-void ptFermat(int a, int p);
+bool ptFermatd(const int p);
+bool ptFermat(const int p, const int n);
 void ptMRab_(int a);
