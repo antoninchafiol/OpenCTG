@@ -27,6 +27,34 @@ bool ptFermat(const int p, const int n){
     return true;
 }
 
+
+bool ptSolStrassd(const int p){
+    for (int a = 1; a < p; a++)
+    {
+        int r = modPow(a, ((p-1)/2), p);
+        if(r!=1 || r!= p-1){
+            return false;
+        }
+    }
+    return true;
+}
+
+bool ptSolStrass(const int p, const int n){
+    for (int i = 1; i < n; i++)
+    {
+        int a = (rand() % p) + 1;
+        int r = modPow(a, ((p-1)/2), p);
+        if(r!=1 || r!= p-1){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+
+
+
 void ptMRab_(int a){
 
 }
