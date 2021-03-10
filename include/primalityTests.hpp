@@ -1,6 +1,10 @@
 #include <vector>
 #include <cmath>
+#include "arithmetics.hpp"
 
-bool ptFermatd(const int p);
-bool ptFermat(const int p, const int n);
-void ptMRab_(int a);
+bool ptFermatd(const u64 p);
+bool ptFermat(const u64 p, const u64 n);
+bool ptSolStrassd(const u64 p);
+bool ptSolStrass(const u64 p, const u64 n);
+
+bool ptMRab_(const u64 p, const u64 n);

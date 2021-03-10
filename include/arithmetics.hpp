@@ -6,6 +6,7 @@
 
 
 using namespace std;
+#define u64 uint64_t
 
 bool isCongruent(int x, int y, int modulo);
 //bool isPrime(int a);

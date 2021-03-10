@@ -3,7 +3,7 @@ CFLAGS=-Wall
 EX_NAME=opencpt
 
 #FILE=/home/antonin/Documents/Personnel/Projets/crypto
-FILE=/home/antonin/Share/crypto
+FILE=/home/antonin/Share/Opencpt
 BIN=$(FILE)/bin
 BUILD=$(FILE)/build
 INCLUDE=$(FILE)/include

@@ -39,5 +39,6 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "random": "cpp"
-    }
+    },
+    "python.pythonPath": "C:\\Users\\achaf_000\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
 }
