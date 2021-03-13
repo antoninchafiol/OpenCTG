@@ -10,7 +10,8 @@ using namespace std;
 
 bool isCongruent(int x, int y, int modulo);
 //bool isPrime(int a);
-unsigned int modPow(unsigned int number, unsigned int exponential, unsigned int modulo);
+unsigned int mod_pow(unsigned int number, unsigned int exponential, unsigned int modulo);
+u64 random_range(u64 low, u64 high);
 unsigned int modDivide(int a, int b, int m) ;
 unsigned int modInverse(unsigned int a, unsigned int modulo);
 unsigned int chinese_remainder(vector<unsigned int> ak, vector<unsigned int> nk);

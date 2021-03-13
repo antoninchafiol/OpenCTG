@@ -10,11 +10,11 @@
 */
 
 // Determinist Fermat test
-bool ptFermatd(const u64 p){
-    for (u64 a = 1; a < p; a++)
+bool ptFermatd(const u64 n){
+    for (u64 a = 1; a < n; a++)
     {
-        //printf("numbert: %d \n", modPow(a, p-1, p));
-        if(modPow(a, p-1, p) != 1) {
+        //printf("numbert: %d \n", mod_pow(a, p-1, p));
+        if(mod_pow(a, n-1, n) != 1) {
             return false;
         }
     }
@@ -23,35 +23,35 @@ bool ptFermatd(const u64 p){
 }
 
 // Real probabilistic Fermat test 
-bool ptFermat(const u64 p, const u64 n){
+bool ptFermat(const u64 n, const u64 t){
+    for (u64 a = 1; a < t; a++)
+    {
+        u64 k = random_range(2, n-2);
+        if(mod_pow(k, n-1, n) != 1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+bool ptSolStrassd(const u64 n){
     for (u64 a = 1; a < n; a++)
     {
-        u64 k = (rand() % p) + 1;
-        if(modPow(k, p-1, p) != 1) {
+        u64 r = mod_pow(a, ((n-1)/2), n);
+        if(r!=1 || r!= n-1){
             return false;
         }
     }
     return true;
 }
 
-
-bool ptSolStrassd(const u64 p){
-    for (u64 a = 1; a < p; a++)
+bool ptSolStrass(const u64 n, const u64 t){
+    for (u64 i = 1; i < t; i++)
     {
-        u64 r = modPow(a, ((p-1)/2), p);
-        if(r!=1 || r!= p-1){
-            return false;
-        }
-    }
-    return true;
-}
-
-bool ptSolStrass(const u64 p, const u64 n){
-    for (u64 i = 1; i < n; i++)
-    {
-        u64 a = (rand() % p) + 1;
-        u64 r = modPow(a, ((p-1)/2), p);
-        if(r!=1 || r!= p-1){
+        u64 a = random_range(2, n-2);
+        u64 r = mod_pow(a, ((n-1)/2), n);
+        if(r!=1 || r!= n-1){
             return false;
         }
     }
@@ -61,7 +61,7 @@ bool ptSolStrass(const u64 p, const u64 n){
 
 
 
-bool ptMRab_(const u64 t, const u64 n){
+bool ptMRab_(const u64 n, const u64 t){
     if(n<3 && t<1){
         cout << "Bad parameters" << endl;
         return(false);
@@ -85,23 +85,45 @@ bool ptMRab_(const u64 t, const u64 n){
         return false;
     }
 
-    for (u64 i = 0; i < t; i++) // Number of tries 
-    {
-        u64 a = (rand() % (n-3+1)) + 2;
-        // printf("A=%d\n",a);
-        u64 r = modPow(a, m, n); //First test
-        // printf("First Test = %d \n", fstTest);
-        if (r == 1){
-            return true;
-        }
-        for (u64 k = 0; k <= s; k++)
-        {   
-            u64 secTest = modPow(a, modPow(2,k,n)*m,n);
-            // printf("Second Test = %d\n", secTest);
-            if(secTest == (u64)n-1){
-                return true;
+    // for (u64 i = 0; i < t; i++) // Number of tries 
+    // {
+    //     u64 a = (rand() % (n-3+1)) + 2;
+    //     // printf("A=%d\n",a);
+    //     u64 r = mod_pow(a, m, n); //First test
+    //     // printf("First Test = %d \n", fstTest);
+    //     if (r == 1){
+    //         return true;
+    //     }
+    //     for (u64 k = 0; k <= s; k++)
+    //     {   
+    //         u64 secTest = mod_pow(a, mod_pow(2,k,n)*m,n);
+    //         // printf("Second Test = %d\n", secTest);
+    //         if(secTest == (u64)n-1){
+    //             return true;
+    //         }
+    //     }
+    // }
+
+    for(u64 i = 0; i<t; i++){
+        u64 a = random_range(2, n-2);
+        u64 y = mod_pow(a,m,n);
+        if (y!=1 && y != n-1)
+        {
+            u64 j = 1;
+            while (j<=s-1 && y!= n-1)
+            {
+                y = mod_pow(y,2,n);
+                if(y==1){
+                    return false;
+                }
+                j+=1;
             }
+            if(y!= n-1){
+                return false;
+            }
+            
         }
+        
     }
-    return false;
+    return true;
 }

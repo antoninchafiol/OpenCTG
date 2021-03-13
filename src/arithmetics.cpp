@@ -4,6 +4,8 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <ctime>
+#include <random>
 #include "../include/arithmetics.hpp"
 
 //First occurence of functions (created at the start of the project)
@@ -74,7 +76,7 @@ unsigned int pgcd(unsigned int a, unsigned int b){
 // doesn't optimized (Around 2^x complexity)
 
 
-unsigned int modPow(unsigned int number, unsigned int exponential, unsigned int modulo){
+unsigned int mod_pow(unsigned int number, unsigned int exponential, unsigned int modulo){
     unsigned int res = 1;
     number %= modulo;
 
@@ -160,4 +162,9 @@ unsigned int chinese_remainder(vector<unsigned int> ak, vector<unsigned int> nk)
 
 bool bisCongruent(int x, int y, int modulo){
     return (x%modulo == y%modulo) ? 0 : 1;
+}
+
+u64 random_range(u64 low, u64 high){
+    srand((int)time(0));
+    return( rand() % (high - low) + low);
 }
