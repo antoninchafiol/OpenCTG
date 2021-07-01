@@ -85,24 +85,6 @@ bool ptMRab_(const u64 n, const u64 t){
         return false;
     }
 
-    // for (u64 i = 0; i < t; i++) // Number of tries 
-    // {
-    //     u64 a = (rand() % (n-3+1)) + 2;
-    //     // printf("A=%d\n",a);
-    //     u64 r = mod_pow(a, m, n); //First test
-    //     // printf("First Test = %d \n", fstTest);
-    //     if (r == 1){
-    //         return true;
-    //     }
-    //     for (u64 k = 0; k <= s; k++)
-    //     {   
-    //         u64 secTest = mod_pow(a, mod_pow(2,k,n)*m,n);
-    //         // printf("Second Test = %d\n", secTest);
-    //         if(secTest == (u64)n-1){
-    //             return true;
-    //         }
-    //     }
-    // }
 
     for(u64 i = 0; i<t; i++){
         u64 a = random_range(2, n-2);
@@ -126,4 +108,8 @@ bool ptMRab_(const u64 n, const u64 t){
         
     }
     return true;
+}
+
+bool ptAKS(const u64 n, const u64 t){
+    return 0;
 }
