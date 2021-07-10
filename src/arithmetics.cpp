@@ -1,5 +1,3 @@
-#include "../include/arithmetics.hpp"
-
 #include <iostream>
 #include <vector>
 #include <algorithm>

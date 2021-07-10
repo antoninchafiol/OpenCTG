@@ -1,5 +1,5 @@
 #include <iostream>
-#include"../include/basics_arithmetics.hpp"
+#include"../include/arithmetics.hpp"
 
 int main(int argc, char const *argv[])
 {
@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     unsigned int b = (unsigned int)atoi(argv[2]);
 
     unsigned int pgcd_value = pgcd(a,b);
-    std::vector<unsigned int> bezout_coef_value = bezout_coef(a,b);
+    std::vector<unsigned int> bezout_coef_value = bCoeff(a,b);
     
     printf("PGCD: %d\n Identity: u = %d  v = %d", pgcd_value, bezout_coef_value[0], bezout_coef_value[1]);
     
