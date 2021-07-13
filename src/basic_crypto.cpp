@@ -4,25 +4,32 @@ using namespace std;
 
 string scytale_enc(string entry, unsigned int width){
     string res = "";
-    cout << entry << endl;
-    vector<unsigned int> checkList(entry.size());
-    fill(checkList.begin(),checkList.end(), 0);
+    string entryBis = entry;
 
+    unsigned int widthModulo = width;
     for(int j = 0; j < width; j++){   
+        vector<unsigned int> checkList(entry.size()-res.size(), 0);
         for(int i = 0; i<entry.size(); i++){
-            if(i%width==0){
-                cout << entry[i] << endl;
-                res+=entry[i];
+            if(i%widthModulo==0){
+                cout << entryBis[i] << endl;
                 checkList[i]=1;
             }
         }
-        res+=" ";
-        for(int i = 0; i<entry.size();i++){
+        string tmp =""; 
+        for(int i = 0; i<checkList.size(); i++){
+            cout << checkList[i] << " " ;
             if(checkList[i]==1){
-                entry.erase(i);
+                res+=entryBis[i];
             }
+            else{
+                tmp+=entryBis[i];
+            }
+        cout << entryBis  << " " << res << endl;
+
         }
-        width--;
+        entryBis=tmp;
+        widthModulo--;
+        checkList.clear();
         cout << entry << endl;
     }
     // "shifter" la string de <width>+1 éléments
